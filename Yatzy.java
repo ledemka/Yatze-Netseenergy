@@ -5,7 +5,7 @@ public class Yatzy {
 	protected static int[] dice = new int[5];
 
 	public Yatzy(int[] de) {
-		for (int i = 0; i <= 4; i++) {
+		for (int i = 0; i <= dice.length-1; i++) {
 			dice[i] = de[i];
 
 		}
@@ -15,7 +15,7 @@ public class Yatzy {
 	public static int chance(int[] dice) {
 		int total = 0;
 
-		for (int i = 0; i <= 4; i++) {
+		for (int i = 0; i <= dice.length-1; i++) {
 			total += dice[i];
 		}
 		return total;
@@ -36,7 +36,7 @@ public class Yatzy {
 	// methode permettant l'addition des faces
 	public static int oneTwoThreesfoursFivesSixes(int a, Optional<int[]> tableau) {
 		int sum = 0;
-		for (int i = 0; i <= 4; i++) {
+		for (int i = 0; i <= dice.length-1; i++) {
 			if (tableau.isPresent()) {
 				if (tableau.get()[i] == a)
 					sum += a;
@@ -53,7 +53,7 @@ public class Yatzy {
 	// methode permettant de determiner la petite suite et la grande suite
 	public static int smallStraightLarge(int a, int... dice) {
 		int[] counts = new int[6];
-		for (int i = 0; i <= 4; i++)
+		for (int i = 0; i <= dice.length-1; i++)
 			counts[dice[i] - 1]++;
 		if (a == 15) {
 			if (counts[0] == 1 && counts[1] == 1 && counts[2] == 1 && counts[3] == 1 && counts[4] == 1)
@@ -69,7 +69,7 @@ public class Yatzy {
 	// methode permettant de determiner les carrés
 	public static int four_of_a_kindThree_of_a_kind(int a, int[] dice) {
 		int[] counts = new int[6];
-		for (int i = 0; i <= 4; i++)
+		for (int i = 0; i <= dice.length-1; i++)
 			counts[dice[i] - 1]++;
 		for (int i = 0; i < 6; i++)
 			if (counts[i] >= a)
@@ -85,7 +85,7 @@ public class Yatzy {
 		boolean _3 = false;
 		int _3_at = 0;
 		int[] counts = new int[6];
-		for (int j = 0; j <= 4; j++)
+		for (int j = 0; j <= dice.length-1; j++)
 			counts[dice[j] - 1]++;
 		for (i = 0; i != 6; i++)
 			if (counts[i] == 2) {
@@ -110,7 +110,7 @@ public class Yatzy {
 		int[] counts = new int[6];
 		int n = 0;
 		int score = 0;
-		for (int i = 0; i <= 4; i++)
+		for (int i = 0; i <= dice.length-1; i++)
 			counts[tableau[i] - 1]++;
 		for (int at = 0; at != dice.length; at++) {
 			if (counts[6 - at - 1] >= 2) {
