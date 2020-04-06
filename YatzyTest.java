@@ -1,6 +1,8 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
+//Test Unitaires
+
 public class YatzyTest {
 
     @Test

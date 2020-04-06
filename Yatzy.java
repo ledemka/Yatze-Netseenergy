@@ -11,7 +11,7 @@ public class Yatzy {
 		}
 	}
 
-	// Calcul du total lors du lancé des dés
+	// Calcul du total lors du lancé de nos dés
 	public static int chance(int[] dice) {
 		int total = 0;
 
